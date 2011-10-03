@@ -3,6 +3,15 @@
 A simple python script through which you can pipe things like log
 files and get colorized lines based on regular expression matching.
 
+There are more advanced options out there:
+
+* grc http://korpus.juls.savba.sk/~garabik/software/grc.html
+* pygmentize http://pygments.org/docs/cmdline/
+* and others I'm sure...
+
+which handle regexps in parts of lines etc. I just wanted something
+that did dead simple full line matching with colors.
+
 = Usage
 
 Assuming grepblush.py is available in your path, you'll probably want
