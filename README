@@ -1,0 +1,40 @@
+= grepblush
+
+A simple python script through which you can pipe things like log
+files and get colorized lines based on regular expression matching.
+
+= Usage
+
+Assuming grepblush.py is available in your path, you'll probably want
+to do something like:
+
+cmd_producing_log | grepblush.py matchfile
+
+= Matchfile syntax
+
+The matchfile syntax is:
+
+regex=color
+
+Where regex is a python regular expression (which has to match the
+line using *match*, not find).  The regular expression may contain the
+char '=', as the parser looks for the last = in the line when parsing.
+
+The color designation should either be a bash color code (e.g. 0;30
+for black), or one of the special built in codes: red, yellow, green,
+blue, purple, or light_gray.
+
+Regexs are attempted in the order they appear in the matchfile, and
+the first match is used to determine the color.  This means you can
+use a default at the bottom of the file, for example:
+
+=light_gray
+
+To make any non-matching lines even easier to ignore.
+
+See matchfile.sample for a sample file suitable for log4j and
+imitators.
+
+= Bugs
+
+Please report them at github if you find them!

@@ -1,0 +1,4 @@
+ERROR=red
+WARNING=yellow
+INFO=green
+=light_gray
