@@ -94,6 +94,16 @@ def parse_matchfile(parser, options, args):
     return patterns
 
 def open_input(parser, options, args):
+    """
+    Attempt to open the input file specified in options.input, or
+    stdin if options.input is '-'.
+
+    On an IOError, use the parser's error method to print an error
+    message and exit.
+
+    Return the open file object.
+    """
+
     fil_name = None
     fil = None
 
